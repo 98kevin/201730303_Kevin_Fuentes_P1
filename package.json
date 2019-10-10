@@ -1,0 +1,30 @@
+{
+  "name": "proyecto1",
+  "version": "1.0.0",
+  "description": "Analizador lexico de palabras de un lenguaje",
+  "main": "index.ejs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/98kevin/201730303_Kevin_Fuentes_P1.git"
+  },
+  "keywords": [
+    "Javascritp",
+    "proyect",
+    "frontend-frontend"
+  ],
+  "author": "Kevin Fuentes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/98kevin/201730303_Kevin_Fuentes_P1/issues"
+  },
+  "homepage": "https://github.com/98kevin/201730303_Kevin_Fuentes_P1#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^1.19.3",
+    "path": "^0.12.7"
+  }
+}
