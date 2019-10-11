@@ -9,13 +9,14 @@
 <body>
     <% include nav-var.html%>
     <p>Seleccionar Archivo</p><br>
-    <input type="file" id="file"/>
+    <input type="file" accept=".txt" id="file"/>
     <br>
     <textarea class="textarea"  name="textArea" id="contenido" cols="60" rows="15" disabled="true"></textarea>
     <br>
     <button class="btn btn-primary" id="botonEnviar">Enviar</button>
 
     <% include footer.html %>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="/ingreso.js"></script>
 </body>
 </html>
