@@ -2,10 +2,13 @@
 const input = document.getElementById('file');
 const editor = document.getElementById('contenido');
 const botonEnviar = document.querySelector("#botonEnviar");
+const botonSiguienteToken= document.querySelector("#botonRecibirToken");
+let resultado = document.getElementById('resultado');
 
 //Evento del boton enviar
 botonEnviar.addEventListener('click', evaluarTexto);
-
+//Evento de recibir siguiente token 
+botonSiguienteToken.addEventListener('click', obtenerSiguienteToken);
 
 input.addEventListener('change', function () {
   if (input.files.length > 0) {
@@ -29,15 +32,22 @@ function handleFailure(data) { console.log('error', data); }
 //Funcion del boton enviar
 function evaluarTexto(){
   console.log('Funcion evaularTExto Activada');
+  console.log('texto en ingreso.js '+editor.value);
     // POST
   axios.post(URL, {
     textoDeIngreso: editor.value
   })
-  .then(handleSuccess)
+  .then(response => {
+    //resultado.innerHTML += response.data.textoResultado;
+})
   .catch(handleFailure);
 };
 
-// GET
-axios.get(URL, { params: BODY })
-  .then(handleSuccess)
+function obtenerSiguienteToken(){
+  console.log('Evaluando funcion getPrimerToken');
+  axios.get('/siguienteToken')
+  .then(response => {
+    resultado.innerHTML += response.data.primerTokenActual;
+  })
   .catch(handleFailure);
+};
