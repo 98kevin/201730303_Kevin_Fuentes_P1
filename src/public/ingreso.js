@@ -47,7 +47,7 @@ function obtenerSiguienteToken(){
   axios.get('/siguienteToken')
   .then(response => {
     console.log(response);
-    resultado.innerHTML += "<tr><td>"+response.data.primerTokenActual+"</td><td>Tipo 1 </td></tr>";
+    resultado.innerHTML += "<tr><td>"+response.data.primerTokenActual+"</td></tr>";
   })
   .catch(handleFailure);
 };

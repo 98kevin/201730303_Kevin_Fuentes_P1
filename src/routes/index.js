@@ -121,8 +121,10 @@ function evaluarIdentificador(){
 
 function clasficarIdentificador(textoDelIdentificador){
     if(constPalabrasReservadas.includes(textoDelIdentificador)){
+        textoDelIdentificador = textoDelIdentificador + ' - Palabra Reservada';
         palabrasReservadas.push(textoDelIdentificador);
     }else if(constBooleanos.includes(textoDelIdentificador)){
+        textoDelIdentificador = textoDelIdentificador + ' - Booleano';
         boolenos.push(textoDelIdentificador);
     } else{
         identificadores.push(textoDelIdentificador);
@@ -157,8 +159,10 @@ function clasificarNumero(textoDelNumero){
         }
     }
     if(isComaFloante){
+        textoDelNumero = textoDelNumero + ' - Numero de coma flotante';
         comaFloante.push(textoDelNumero);
     } else {
+        textoDelNumero = textoDelNumero + ' - Numero Entero';
         numbers.push(textoDelNumero);
     }
 }
@@ -172,6 +176,7 @@ function evaluarOperador(){
             x=x+1;  //sumamos una posicion al indice del arreglo de los caracteres 
             codigo = texto.charCodeAt(x);
         } else{
+            tokenActual = tokenActual + ' - Operador';
             tokens.push(tokenActual);
             operadores.push(tokenActual);
             tokenActual='';      //reiniciamos el token 
@@ -190,6 +195,7 @@ function evaluarAgrupador(){
             x=x+1;  //sumamos una posicion al indice del arreglo de los caracteres 
             codigo = texto.charCodeAt(x);
         } else{
+            tokenActual = tokenActual + ' - Agrupador';
             tokens.push(tokenActual);
             agrupadores.push(tokenActual);
             tokenActual='';      //reiniciamos el token 
@@ -208,6 +214,7 @@ function evaluarSigno(){
             x=x+1;  //sumamos una posicion al indice del arreglo de los caracteres 
             codigo = texto.charCodeAt(x);
         } else{
+            tokenActual = tokenActual + ' - Signo';
             tokens.push(tokenActual);
             signos.push(tokenActual);
             tokenActual='';      //reiniciamos el token 
