@@ -13,13 +13,20 @@
     <br>
     <textarea class="textarea"  name="textArea" id="contenido" cols="60" rows="15" disabled="true"></textarea>
     <br>
-    <button class="btn btn-primary" id="botonEnviar">Enviar</button><br><br>
+    <button class="btn btn-primary" id="botonEnviar">Ingresar Informacion</button><br><br>
 
-    <button class="btn btn-default" id="botonRecibirToken">Siguiente Token</button>
+    <button class="btn btn-success" id="botonRecibirToken">Ver siguiente token</button>
 
-    <p id="resultado"> </p>
+    <table id='resultado' class="table">
+        <tbody>
+          <tr>
+            <td>Token Ingresado</td>
+            <td>Tipo de Token</td>
+            </tr>
+        </tbody>
+    </table>
 
-    <% include footer.html %>
+<!---->    <% include footer.html %>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="/ingreso.js"></script>
 </body>

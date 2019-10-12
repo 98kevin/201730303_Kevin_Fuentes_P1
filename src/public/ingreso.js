@@ -29,25 +29,25 @@ var URL = 'http://localhost:3000/evaluarContenido';
 function handleSuccess(data) { console.log(data); }
 function handleFailure(data) { console.log('error', data); }
 
-//Funcion del boton enviar
+//Funcion del boton enviar texto
 function evaluarTexto(){
   console.log('Funcion evaularTExto Activada');
-  console.log('texto en ingreso.js '+editor.value);
     // POST
   axios.post(URL, {
     textoDeIngreso: editor.value
   })
   .then(response => {
-    //resultado.innerHTML += response.data.textoResultado;
-})
+    console.log(response)
+  })
   .catch(handleFailure);
+  alert('Texto Ingresado')
 };
 
 function obtenerSiguienteToken(){
-  console.log('Evaluando funcion getPrimerToken');
   axios.get('/siguienteToken')
   .then(response => {
-    resultado.innerHTML += response.data.primerTokenActual;
+    console.log(response);
+    resultado.innerHTML += "<tr><td>"+response.data.primerTokenActual+"</td><td>Tipo 1 </td></tr>";
   })
   .catch(handleFailure);
 };
